@@ -16,6 +16,7 @@ import {LayoutsModule} from './components/common/layouts/layouts.module';
 import { KlantenComponent } from './components/gameparadise/klanten/klanten.component';
 import { KlantenService } from './services/data/klanten.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DxDataGridModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardsModule,
     LayoutsModule,
     AppviewsModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    DxDataGridModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
