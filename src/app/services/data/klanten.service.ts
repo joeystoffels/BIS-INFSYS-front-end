@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class KlantenService {
 
-    private url = 'http://localhost:8080/klanten/';
+    private url = 'http://localhost:8080/klant/';
     private results: Klant[];
 
     // Resolve HTTP using the constructor

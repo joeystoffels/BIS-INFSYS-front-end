@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
@@ -15,6 +14,8 @@ import {AppviewsModule} from './views/appviews/appviews.module';
 // App modules/components
 import {LayoutsModule} from './components/common/layouts/layouts.module';
 import { KlantenComponent } from './components/gameparadise/klanten/klanten.component';
+import { KlantenService } from './services/data/klanten.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { KlantenComponent } from './components/gameparadise/klanten/klanten.comp
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     DashboardsModule,
     LayoutsModule,
     AppviewsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
+    KlantenService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
