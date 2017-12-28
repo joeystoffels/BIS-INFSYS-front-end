@@ -1,7 +1,29 @@
 <p>
-  klanten works!
   <dx-data-grid
+    id="klanten"
     [dataSource]="klanten"
-    >
+    [columns]="['achternaam', 'voornamen', 'woonplaats', 'emailadres']"
+    [masterDetail]="{ enabled: true, template: 'detail', autoExpandAll: false }"
+    (onSelectionChanged)="selectionChanged($event)">
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+    <dxo-selection mode="single"></dxo-selection>
+    <dxo-paging 
+        [enabled]="true">
+    </dxo-paging>
+    <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2} klanten)"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+    </dxo-pager>
+    <dxo-export [enabled]="true"></dxo-export>
+    <!-- <dxo-load-panel [enabled]="true"></dxo-load-panel> -->
+    <div *dxTemplate="let employee of 'detail'">
+        <div class="employeeInfo">
+            <p class="employeeNotes">{{employee.data.Notes}} test</p>
+        </div>
+    </div>
   </dx-data-grid>
 </p>
