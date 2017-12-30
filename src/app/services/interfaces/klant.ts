@@ -11,4 +11,6 @@ export interface Klant {
     geboortedatum: String;
     geslacht: String;
     wachtwoord: String;
+    omzet: Number;
+    status: String;
 }

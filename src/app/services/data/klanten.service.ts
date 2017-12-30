@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Klant } from '../interfaces/klant';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { KlantHistorie } from '../interfaces/klant-historie';
+import { KlantOmzet } from '../interfaces/klant-omzet';
 
 @Injectable()
 export class KlantenService {
@@ -16,6 +18,22 @@ export class KlantenService {
     getKlanten(): Observable<any> {
         // return an observable
         return this.http.get<Klant>(this.url)
+            .map((data) => {
+                return data;
+            });
+    }
+
+    getKlantOmzet( email: String): Observable<any> {
+        const url = `${this.url}/${email}/omzet`;
+        return this.http.get<KlantOmzet>(url)
+            .map((data) => {
+                return data;
+            });
+    }
+
+    getKlantHistory( email: String): Observable<any> {
+        const url = `${this.url}/${email}/history`;
+        return this.http.get<KlantHistorie>(url)
             .map((data) => {
                 return data;
             });

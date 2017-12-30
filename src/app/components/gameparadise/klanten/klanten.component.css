@@ -1,0 +1,21 @@
+.fa-6 {
+    font-size: 60px;
+}
+
+.gold {
+    color: #D9A441;
+}
+.silver {
+    color: #A8A8A8;
+}
+.brons {
+    color: #965A38;
+}
+
+.address {
+    -moz-hyphens:auto;
+    -ms-hyphens:auto;
+    -webkit-hyphens:auto;
+    hyphens:auto;
+    word-wrap:break-word;
+}
