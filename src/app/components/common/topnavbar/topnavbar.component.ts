@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { smoothlyMenu } from '../../../app.helpers';
+import {AuthService} from "../../../services/data/auth.service";
+import {Router} from "@angular/router";
 declare var jQuery:any;
 
 @Component({
@@ -11,6 +13,16 @@ export class TopNavbarComponent {
   toggleNavigation(): void {
     jQuery("body").toggleClass("mini-navbar");
     smoothlyMenu();
+  }
+
+  constructor( private auth: AuthService, private router: Router) {
+  }
+
+  public logOut(){
+    this.auth.setUsername('');
+    this.auth.setPassword('');
+    this.auth.setRole('');
+    this.router.navigate(['/login']);
   }
 
 }
