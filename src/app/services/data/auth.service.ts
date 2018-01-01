@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   private _name: String;
   private _username: String;
@@ -41,5 +42,12 @@ export class AuthService {
 
   public setName(value: String) {
     this._name = value;
+  }
+
+  public logOut(){
+    this.setUsername('');
+    this.setPassword('');
+    this.setRole('');
+    this.router.navigate(['/login']);
   }
 }

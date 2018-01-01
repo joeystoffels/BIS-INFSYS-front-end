@@ -19,45 +19,47 @@ import {OmzettenPerKlantComponent} from "./components/gameparadise/rapportage/om
 import {OverzichtVerhuurdComponent} from "./components/gameparadise/rapportage/overzicht-verhuurd/overzicht-verhuurd.component";
 import {InkoophoeveelheidComponent} from "./components/gameparadise/rapportage/inkoophoeveelheid/inkoophoeveelheid.component";
 import {AuthGuard} from "./guard/auth.guard";
+import {Top10Component} from "./components/gameparadise/rapportage/top10/top10.component";
 
 export const ROUTES: Routes = [
   // Main redirect
-  {path: '', redirectTo: 'starterview', pathMatch: 'full'},
+  {path: '', redirectTo: 'overzicht/klanten', pathMatch: 'full'},
 
   // App views
-  {
-    path: 'dashboards', component: BasicLayoutComponent,
-    children: [
-      {path: 'dashboard1', component: Dashboard1Component},
-      {path: 'dashboard2', component: Dashboard2Component},
-      {path: 'dashboard3', component: Dashboard3Component},
-      {path: 'dashboard4', component: Dashboard4Component},
-      {path: 'dashboard5', component: Dashboard5Component}
-    ]
-  },
-  {
-    path: 'rapportage', component: BasicLayoutComponent,
-    children: [
-      {path: 'console-in-reparatie', component: ConsoleInReparatieComponent, canActivate: [AuthGuard]},
-      {path: 'niet-verhuurd-in2016', component: NietVerhuurdIn2016Component, canActivate: [AuthGuard]},
-      {path: 'omzetten', component: OmzettenComponent, canActivate: [AuthGuard]},
-      {path: 'omzetten-per-klant', component: OmzettenPerKlantComponent, canActivate: [AuthGuard]},
-      {path: 'overzicht-verhuurd', component: OverzichtVerhuurdComponent, canActivate: [AuthGuard]},
-      {path: 'inkoophoeveelheid', component: InkoophoeveelheidComponent, canActivate: [AuthGuard]},
-    ]
-  },
   {
     path: 'overzicht', component: BasicLayoutComponent,
     children: [
       {path: 'klanten', component: KlantenComponent, canActivate: [AuthGuard]},
     ],
   },
+  // {
+  //   path: 'dashboards', component: BasicLayoutComponent,
+  //   children: [
+  //     {path: 'dashboard1', component: Dashboard1Component},
+  //     {path: 'dashboard2', component: Dashboard2Component},
+  //     {path: 'dashboard3', component: Dashboard3Component},
+  //     {path: 'dashboard4', component: Dashboard4Component},
+  //     {path: 'dashboard5', component: Dashboard5Component}
+  //   ]
+  // },
   {
-    path: '', component: BasicLayoutComponent,
+    path: 'rapportage', component: BasicLayoutComponent,
     children: [
-      {path: '', component: StarterViewComponent, canActivate: [AuthGuard]}
+      {path: 'verhuurd', component: OverzichtVerhuurdComponent, canActivate: [AuthGuard]},
+      {path: 'niet-verhuurd-in2016', component: NietVerhuurdIn2016Component, canActivate: [AuthGuard]},
+      {path: 'omzetten', component: OmzettenComponent, canActivate: [AuthGuard]},
+      {path: 'top10', component: Top10Component, canActivate: [AuthGuard]},
+      {path: 'console-in-reparatie', component: ConsoleInReparatieComponent, canActivate: [AuthGuard]},
+      {path: 'omzetten-per-klant', component: OmzettenPerKlantComponent, canActivate: [AuthGuard]},
+      {path: 'inkoophoeveelheid', component: InkoophoeveelheidComponent, canActivate: [AuthGuard]},
     ]
   },
+  // {
+  //   path: '', component: BasicLayoutComponent,
+  //   children: [
+  //     {path: '', component: StarterViewComponent, canActivate: [AuthGuard]}
+  //   ]
+  // },
   {
     path: '', component: BlankLayoutComponent,
     children: [
@@ -65,5 +67,5 @@ export const ROUTES: Routes = [
     ]
   },
   // Handle all other routes
-  {path: '**',  redirectTo: 'login'}
+  {path: '**',  redirectTo: 'klanten'}
 ];

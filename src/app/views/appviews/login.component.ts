@@ -16,28 +16,28 @@ export class LoginComponent {
   public login(name: String){
     switch (name){
       case 'MEDEWERKER': {
-          this.auth.setName('M. De Werker');
+          this.auth.setName('M. De Geus');
           this.auth.setUsername('medewerker');
           this.auth.setPassword('medewerker');
           this.auth.setRole('medewerker');
         break;
       }
       case 'FILIAALMANAGER': {
-        this.auth.setName('F. Manger');
+        this.auth.setName('J. Stoffels');
         this.auth.setUsername('filiaalmanager');
         this.auth.setPassword('filiaalmanager');
         this.auth.setRole('filiaalmanager');
         break;
       }
       case 'DIRECTIE': {
-        this.auth.setName('D. Teur');
+        this.auth.setName('N. Hartjes');
         this.auth.setUsername('directie');
         this.auth.setPassword('directie');
         this.auth.setRole('directie');
         break;
       }
       case 'VOORRAADBEHEERDER': {
-        this.auth.setName('H. Order');
+        this.auth.setName('J. Order');
         this.auth.setUsername('voorraadbeheerder');
         this.auth.setPassword('voorraadbeheerder');
         this.auth.setRole('voorraadbeheerder');

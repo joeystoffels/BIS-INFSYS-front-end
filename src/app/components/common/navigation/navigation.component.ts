@@ -35,6 +35,10 @@ export class NavigationComponent {
     return this.router.url.indexOf(routename) > -1;
   }
 
+  public logOut(){
+    this.auth.logOut();
+  }
+
   public show(page:String){
     var array = new Array();
     switch(page){

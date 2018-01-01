@@ -19,10 +19,7 @@ export class TopNavbarComponent {
   }
 
   public logOut(){
-    this.auth.setUsername('');
-    this.auth.setPassword('');
-    this.auth.setRole('');
-    this.router.navigate(['/login']);
+    this.auth.logOut();
   }
 
 }
