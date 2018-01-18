@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RapportagesService} from "../../../../services/data/rapportages.service";
 
 @Component({
   selector: 'app-omzetten-per-klant',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OmzettenPerKlantComponent implements OnInit {
 
-  constructor() { }
+  public omzettenPerKlant: any;
+
+  constructor( private rapportagesService: RapportagesService) { }
 
   ngOnInit() {
+    this.getOmzettenPerKlant();
   }
 
+  private getOmzettenPerKlant() {
+    this.rapportagesService.getOmzettenPerKlant()
+      .subscribe(
+        res => this.omzettenPerKlant = res
+      );
+  }
 }

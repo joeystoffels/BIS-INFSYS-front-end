@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RapportagesService} from "../../../../services/data/rapportages.service";
 
 @Component({
   selector: 'app-omzetten',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OmzettenComponent implements OnInit {
 
-  constructor() { }
+  public omzetten: any;
+
+  constructor( private rapportagesService: RapportagesService) { }
 
   ngOnInit() {
+    this.getOmzetten();
+  }
+
+  private getOmzetten() {
+    this.rapportagesService.getOmzetten()
+      .subscribe(
+        res => this.omzetten = res
+      );
   }
 
 }

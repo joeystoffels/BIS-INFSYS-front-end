@@ -1,3 +1,80 @@
-<p>
-  niet-verhuurd-in2016 works!
-</p>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Headings</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-wrench"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a href="#">Config option 1</a>
+            </li>
+            <li><a href="#">Config option 2</a>
+            </li>
+          </ul>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content" style="">
+        <h1>Artikelen die niet verhuurd zijn in 2016
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Headings</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-wrench"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a href="#">Config option 1</a>
+            </li>
+            <li><a href="#">Config option 2</a>
+            </li>
+          </ul>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content" style="">
+        <dx-data-grid
+          id="nietVerhuurdIn2016"
+          [dataSource]="nietVerhuurdIn2016">
+          <dxi-column dataField="titel" sortOrder="asc"></dxi-column>
+          <dxi-column dataField="jaar_uitgave"></dxi-column>
+          <dxi-column dataField="uitgever"></dxi-column>
+          <dxo-filter-row [visible]="true"></dxo-filter-row>
+          <dxo-sorting mode="multiple"></dxo-sorting>
+          <dxo-header-filter [visible]="true"></dxo-header-filter>
+          <dxo-paging
+            [enabled]="true">
+          </dxo-paging>
+          <dxo-pager
+            [showInfo]="true"
+            infoText="Pagina #{0}. Totaal: {1} ({2} spellen)"
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 20, 50]"
+            [showNavigationButtons]="true">
+          </dxo-pager>
+          <dxo-export [enabled]="true"></dxo-export>
+        </dx-data-grid>
+      </div>
+    </div>
+  </div>
+</div>

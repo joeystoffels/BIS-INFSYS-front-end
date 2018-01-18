@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RapportagesService} from "../../../../services/data/rapportages.service";
 
 @Component({
   selector: 'app-overzicht-verhuurd',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverzichtVerhuurdComponent implements OnInit {
 
-  constructor() { }
+  public overzichtVerhuurd: any;
+
+  constructor( private rapportagesService: RapportagesService) { }
 
   ngOnInit() {
+    this.getOverzichtVerhuurd();
   }
 
+  private getOverzichtVerhuurd() {
+    this.rapportagesService.getOverzichtVerhuurd()
+      .subscribe(
+        res => this.overzichtVerhuurd = res
+      );
+  }
 }

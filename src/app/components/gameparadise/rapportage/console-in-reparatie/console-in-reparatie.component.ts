@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RapportagesService} from "../../../../services/data/rapportages.service";
 
 @Component({
   selector: 'app-console-in-reparatie',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsoleInReparatieComponent implements OnInit {
 
-  constructor() { }
+  public consolesInReparatie: any;
+
+  constructor( private rapportagesService: RapportagesService) { }
 
   ngOnInit() {
+    this.getConsolesInReparatie();
   }
 
+  private getConsolesInReparatie() {
+    this.rapportagesService.getConsolesInReparatie()
+      .subscribe(
+        res => this.consolesInReparatie = res
+      );
+  }
 }

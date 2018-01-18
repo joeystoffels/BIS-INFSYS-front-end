@@ -1,147 +1,180 @@
 <p>
-  <dx-data-grid
-    id="klanten"
-    [dataSource]="klanten"
-    [masterDetail]="{ enabled: true, template: 'detail', autoExpandAll: false }"
-    (onSelectionChanged)="selectionChanged($event)">
-    <dxi-column dataField="achternaam" sortOrder="asc"></dxi-column>
-    <dxi-column dataField="voornamen"></dxi-column>
-    <dxi-column dataField="emailadres"></dxi-column>
-    <dxi-column dataField="woonplaats"></dxi-column>
-    <dxi-column dataField="status"></dxi-column>
-    <dxo-filter-row [visible]="true"></dxo-filter-row>
-    <dxo-sorting mode="multiple"></dxo-sorting>
-    <dxo-header-filter [visible]="true"></dxo-header-filter>
-    <dxo-selection mode="single"></dxo-selection>
-    <dxo-paging 
-        [enabled]="true">
-    </dxo-paging>
-    <dxo-pager
-        [showInfo]="true"
-        infoText="Pagina #{0}. Totaal: {1} ({2} klanten)"
-        [showPageSizeSelector]="true"
-        [allowedPageSizes]="[10, 20, 50]"
-        [showNavigationButtons]="true">
-    </dxo-pager>
-    <dxo-export [enabled]="true"></dxo-export>
-    <!-- <dxo-load-panel [enabled]="true"></dxo-load-panel> -->
-    <div *dxTemplate="let employee of 'detail'">
+    <dx-data-grid
+        id="klanten"
+        [dataSource]="klanten"
+        [masterDetail]="{ enabled: true, template: 'detail', autoExpandAll: false }"
+        (onSelectionChanged)="selectionChanged($event)">
+        <dxi-column dataField="achternaam" sortOrder="asc"></dxi-column>
+        <dxi-column dataField="voornamen"></dxi-column>
+        <dxi-column dataField="emailadres"></dxi-column>
+        <dxi-column dataField="woonplaats"></dxi-column>
+        <dxi-column dataField="status"></dxi-column>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-sorting mode="multiple"></dxo-sorting>
+        <dxo-header-filter [visible]="true"></dxo-header-filter>
+        <dxo-selection mode="single"></dxo-selection>
+        <dxo-paging
+            [enabled]="true">
+        </dxo-paging>
+        <dxo-pager
+            [showInfo]="true"
+            infoText="Pagina #{0}. Totaal: {1} ({2} klanten)"
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 20, 50]"
+            [showNavigationButtons]="true">
+        </dxo-pager>
+        <dxo-export [enabled]="true"></dxo-export>
+        <!-- <dxo-load-panel [enabled]="true"></dxo-load-panel> -->
+        <div *dxTemplate="let customer of 'detail'">
 
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="contact-box">
-                    <div class="col-sm-4">
-                        <div class="text-center">
-                            <i [ngClass]="{
-                                'gold':klant.status === 'Gold',
-                                'silver':klant.status === 'Silver',
-                                'brons':klant.status === 'Brons'
-                              }" class="fa fa-star fa-6" aria-hidden="true"></i>
-                            <!-- <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"> -->
-                            <div class="m-t-xs font-bold">{{ klant.status }}</div>
-                            <!-- <div>Omzet: {{ klantOmzet.omzet | number:'1.0' }}</div>
-                            <div>Omzet: {{ klant.omzet | number:'1.0' }}</div>
-                            <br/> -->
-                            <div>{{ klant.merkEigenConsole }}</div>
-                            <div>{{ klant.typeEigenConsole }}</div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="contact-box">
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <i class="fa fa-star fa-6" aria-hidden="true" [ngClass]="{
+                                    'gold':klant?.status === 'Gold',
+                                    'silver':klant?.status === 'Silver',
+                                    'brons':klant?.status === 'Brons'
+                                }"></i>
+                                <!-- <img alt="image" class="img-circle m-t-xs img-responsive" src="img/a2.jpg"> -->
+                                <div class="m-t-xs font-bold">{{ klant?.status }}</div>
+                                <!-- <div>Omzet: {{ klantOmzet.omzet | number:'1.0' }}</div>
+                                <div>Omzet: {{ klant.omzet | number:'1.0' }}</div>
+                                <br/> -->
+                                <div>{{ klant?.merk_eigen_console }}</div>
+                                <div>{{ klant?.type_eigen_console }}</div>
+                            </div>
                         </div>
+                        <div class="col-sm-7 address">
+                            <h3><strong>{{ klant?.voornamen }} {{ klant?.achternaam }}</strong></h3>
+                            <!-- <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p> -->
+                            <address>
+                                {{ klant?.straatnaam }} {{ klant?.huisnummer }}<br>
+                                {{ klant?.postcode }} {{ klant?.woonplaats }}<br>
+                            </address>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="col-sm-7 address">
-                        <h3><strong>{{ klant.voornamen }} {{ klant.achternaam }}</strong></h3>
-                        <!-- <p><i class="fa fa-map-marker"></i> Riviera State 32/106</p> -->
-                        <address>
-                            {{ klant.straatnaam }} {{ klant.huisnummer }}<br>
-                            {{ klant.postcode }} {{ klant.woonplaats }}<br>
-                        </address>
-                    </div>
-                    <div class="clearfix"></div>
                 </div>
-            </div>
 
-            <div class="col-lg-8">
-                <div class="ibox">
-                    <div class="ibox-title">
-                        <h5>Issue list</h5>
-                        <div class="ibox-tools">
-                            <a href="" class="btn btn-primary btn-xs">Add new issue</a>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Omzet</h5>
+                            <div class="ibox-tools">
+                                <a href="" class="btn btn-primary btn-xs">Omzet</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="m-b-lg">
-                            <div class="table-responsive">
-                                <table class="table table-hover issue-tracker">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <span class="label label-primary">Added</span>
-                                        </td>
-                                        <td class="issue-info">
-                                            <a href="#">
-                                                ISSUE-23
-                                            </a>
-
-                                            <small>
-                                                This is issue with the coresponding note
-                                            </small>
-                                        </td>
-                                        <td>
-                                            Adrian Novak
-                                        </td>
-                                        <td>
-                                            12.02.2015 10:00 am
-                                        </td>
-                                        <td>
-                                            <span class="pie" style="display: none;">0.52,1.041</span><svg class="peity" height="16" width="16"><path d="M 8 8 L 8 0 A 8 8 0 0 1 14.933563796318165 11.990700825968545 Z" fill="#1ab394"></path><path d="M 8 8 L 14.933563796318165 11.990700825968545 A 8 8 0 1 1 7.999999999999998 0 Z" fill="#d7d7d7"></path></svg>
-                                            2d
-                                        </td>
-                                        <td class="text-right">
-                                            <button class="btn btn-white btn-xs"> Tag</button>
-                                            <button class="btn btn-white btn-xs"> Mag</button>
-                                            <button class="btn btn-white btn-xs"> Rag</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="label label-primary">Added</span>
-                                        </td>
-                                        <td class="issue-info">
-                                            <a href="#">
-                                                ISSUE-17
-                                            </a>
-
-                                            <small>
-                                                Desktop publishing packages and web page editors now use Lorem Ipsum as their default model text
-                                            </small>
-                                        </td>
-                                        <td>
-                                            Anna Smith
-                                        </td>
-                                        <td>
-                                            10.02.2015 05:32 am
-                                        </td>
-                                        <td>
-                                            <span class="pie" style="display: none;">3,2</span><svg class="peity" height="16" width="16"><path d="M 8 8 L 8 0 A 8 8 0 1 1 3.297717981660216 14.47213595499958 Z" fill="#1ab394"></path><path d="M 8 8 L 3.297717981660216 14.47213595499958 A 8 8 0 0 1 7.999999999999998 0 Z" fill="#d7d7d7"></path></svg>
-                                            2d
-                                        </td>
-                                        <td class="text-right">
-                                            <button class="btn btn-white btn-xs"> Tag</button>
-                                            <button class="btn btn-white btn-xs"> Rag</button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                        <div class="ibox-content">
+                            <div class="">
+                                <div *ngIf="klantOmzet; else empty">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover issue-tracker">
+                                            <tbody>
+                                            <tr *ngFor="let omzet of klantOmzet">
+                                                <td>
+                                                    <span class="label label-primary">{{ omzet?.jaar }}</span>
+                                                </td>
+                                                <td>
+                                                    <small>
+                                                        &euro; {{ omzet?.omzet | number:'1.2' }}
+                                                    </small>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> 
+
+                <div class="col-lg-6 col-sm-12">
+                    <div class="ibox">
+                        <div class="ibox-title">
+                            <h5>Verhuurhistorie</h5>
+                            <div class="ibox-tools">
+                                <a href="" class="btn btn-primary btn-xs">Verhuurhistorie</a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+
+                            <div *ngIf="klantHistory; else empty">
+                                <div class="table-responsive">
+                                    <table class="table table-hover issue-tracker">
+                                        <tbody>
+                                        <tr *ngFor="let history of klantHistory">
+                                            <td>
+                                                    <span *ngIf="history.merk"
+                                                          class="label label-primary">Console</span>
+                                                <span *ngIf="history.titel" class="label label-primary">Game</span>
+                                            </td>
+                                            <td>
+                                                <small>
+                                                    {{ history.datum }}
+                                                </small>
+                                            </td>
+                                            <td class="issue-info">
+                                                <small *ngIf="history.merk">
+                                                    {{ history.merk }}
+                                                </small>
+                                                <small *ngIf="history.titel">
+                                                    {{ history.titel }} ({{ history.jaarUitgave }})
+                                                </small>
+                                            </td>
+                                            <td>
+                                                <small *ngIf="history.merk">
+                                                    {{ history.type }}
+                                                </small>
+                                                <small *ngIf="history.titel">
+                                                    {{ history.uitgever }}
+                                                </small>
+                                            </td>
+                                            <!--<td class="text-right">-->
+                                            <!--<button class="btn btn-white btn-xs"> Tag</button>-->
+                                            <!--<button class="btn btn-white btn-xs"> Mag</button>-->
+                                            <!--<button class="btn btn-white btn-xs"> Rag</button>-->
+                                            <!--</td>-->
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <ng-template #emptyHistory>
+                                <div class="table-responsive">
+                                    <table class="table table-hover issue-tracker">
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="6">
+                                                <span class="label label-primary">Empty</span>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </ng-template>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="employeeInfo">
-                <p>{{klantOmzet | json}}</p>
-                <p>{{klantHistory | json}}</p>
-            <p class="employeeNotes">{{employee.data.Notes}} test</p>
-        </div>
-    </div>
-  </dx-data-grid>
+        <ng-template #empty>
+            <div class="table-responsive">
+                <table class="table table-hover issue-tracker">
+                    <tbody>
+                    <tr>
+                        <td colspan="6">
+                            <span class="label label-primary">Empty</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </ng-template>
+    </dx-data-grid>
 </p>

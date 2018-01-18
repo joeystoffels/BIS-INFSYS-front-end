@@ -4,6 +4,8 @@ import { Klant } from '../../../services/interfaces/klant';
 import DataSource from 'devextreme/data/data_source';
 import { DxDataGridModule, DxDataGridComponent } from 'devextreme-angular';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import {KlantHistorie} from "../../../services/interfaces/klant-historie";
+import {KlantOmzet} from "../../../services/interfaces/klant-omzet";
 
 @Component({
   selector: 'app-klanten',
@@ -13,8 +15,8 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class KlantenComponent implements OnInit {
     public klant: Klant;
     public klanten: any = {};
-    public klantOmzet: any = {};
-    public klantHistory: any = {};
+    public klantOmzet: KlantOmzet[];
+    public klantHistory: KlantHistorie[];
 
     selectionChanged(e) {
         const email = e.currentSelectedRowKeys[0]['emailadres'];

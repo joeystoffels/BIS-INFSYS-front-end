@@ -1,3 +1,89 @@
-<p>
-  omzetten-per-klant works!
-</p>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Headings</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-wrench"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a href="#">Config option 1</a>
+            </li>
+            <li><a href="#">Config option 2</a>
+            </li>
+          </ul>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content" style="">
+        <h1>Omzetten per jaar per klant
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Headings</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link">
+            <i class="fa fa-chevron-up"></i>
+          </a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-wrench"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-user">
+            <li><a href="#">Config option 1</a>
+            </li>
+            <li><a href="#">Config option 2</a>
+            </li>
+          </ul>
+          <a class="close-link">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      </div>
+      <div class="ibox-content" style="">
+        <dx-data-grid
+          id="omzettenPerKlant"
+          [dataSource]="omzettenPerKlant">
+          <dxo-grouping
+            [contextMenuEnabled]="true">
+          </dxo-grouping>
+          <dxo-group-panel
+            [visible]="true"
+            [allowColumnDragging]="false">
+          </dxo-group-panel>
+          <dxi-column dataField="emailadres" sortOrder="asc" [groupIndex]="1"></dxi-column>
+          <dxi-column dataField="jaar" sortOrder="asc"></dxi-column>
+          <dxi-column dataField="omzet" ></dxi-column>
+          <dxi-column dataField="omzet_laatste_12_maanden"></dxi-column>
+          <dxi-column dataField="status"></dxi-column>
+          <dxo-filter-row [visible]="true"></dxo-filter-row>
+          <dxo-sorting mode="multiple"></dxo-sorting>
+          <dxo-header-filter [visible]="true"></dxo-header-filter>
+          <dxo-paging
+            [enabled]="true">
+          </dxo-paging>
+          <dxo-pager
+            [showInfo]="true"
+            infoText="Pagina #{0}. Totaal: {1} ({2})"
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 20, 50]"
+            [showNavigationButtons]="true">
+          </dxo-pager>
+          <dxo-export [enabled]="true"></dxo-export>
+        </dx-data-grid>
+      </div>
+    </div>
+  </div>
+</div>

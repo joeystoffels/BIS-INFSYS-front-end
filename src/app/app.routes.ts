@@ -46,7 +46,7 @@ export const ROUTES: Routes = [
     path: 'rapportage', component: BasicLayoutComponent,
     children: [
       {path: 'verhuurd', component: OverzichtVerhuurdComponent, canActivate: [AuthGuard]},
-      {path: 'niet-verhuurd-in2016', component: NietVerhuurdIn2016Component, canActivate: [AuthGuard]},
+      {path: 'niet-in2016', component: NietVerhuurdIn2016Component, canActivate: [AuthGuard]},
       {path: 'omzetten', component: OmzettenComponent, canActivate: [AuthGuard]},
       {path: 'top10', component: Top10Component, canActivate: [AuthGuard]},
       {path: 'console-in-reparatie', component: ConsoleInReparatieComponent, canActivate: [AuthGuard]},
