@@ -5,6 +5,8 @@ import {RouterModule} from '@angular/router';
 import {ROUTES} from './app.routes';
 import { AppComponent } from './app.component';
 import { KlantOverzichtComponent } from './components/klant-overzicht/klant-overzicht.component';
+import { KlantService } from './services/klant.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,9 +16,12 @@ import { KlantOverzichtComponent } from './components/klant-overzicht/klant-over
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    KlantService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
