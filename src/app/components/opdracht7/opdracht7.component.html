@@ -1,23 +1,166 @@
-<p>
-  Opdracht7 works!
-</p>
-<p>
-  Opdracht 7a:
-  {{ opdracht7a | json }}
-</p>
-<p>
-  Opdracht 7b:
-  {{ opdracht7b | json }}
-</p>
-<p>
-  Opdracht 7c:
-  {{ opdracht7c | json }}
-</p>
-<p>
-  Opdracht 7d:
-  {{ opdracht7d | json }}
-</p>
-<p>
-  Opdracht 7e:
-  {{ opdracht7e | json }}
-</p>
+<!--<p>-->
+<!--Opdracht7 works!-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 7a:-->
+<!--{{ opdracht7a | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 7b:-->
+<!--{{ opdracht7b | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 7c:-->
+<!--{{ opdracht7c | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 7d:-->
+<!--{{ opdracht7d | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 7e:-->
+<!--{{ opdracht7e | json }}-->
+<!--</p>-->
+
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 7A
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht7a"
+      [dataSource]="opdracht7a">
+      <dxi-column dataField="omzet_januari_2015" sortOrder="desc"></dxi-column>
+      <!--<dxi-column dataField="aantal"></dxi-column>-->
+      <!--<dxi-column dataField="totaalbedrag"></dxi-column>-->
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 7B
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht7b"
+      [dataSource]="opdracht7b">
+      <dxi-column dataField="titel" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="uitgever"></dxi-column>
+      <dxi-column dataField="aantal_keer_verhuurd"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 7C
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht7c"
+      [dataSource]="opdracht7c">
+      <dxi-column dataField="einddatum" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="emailadres"></dxi-column>
+      <dxi-column dataField="huurstatus"></dxi-column>
+      <dxi-column dataField="startdatum"></dxi-column>
+      <dxi-column dataField="bedrag"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 7D
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht7d"
+      [dataSource]="opdracht7d">
+      <dxi-column dataField="totale_schade_2016" sortOrder="desc"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 7Es
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht7e"
+      [dataSource]="opdracht7e">
+      <dxi-column dataField="barcode" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="merk"></dxi-column>
+      <dxi-column dataField="type"></dxi-column>
+      <dxi-column dataField="prijs"></dxi-column>
+      <dxi-column dataField="prijs_per_d"></dxi-column>
+      <dxi-column dataField="schadebedrag"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>

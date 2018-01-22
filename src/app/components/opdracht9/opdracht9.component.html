@@ -1,31 +1,239 @@
-<p>
-    Opdracht9 works!
-  </p>
-  <p>
-    Opdracht 9a:
-    {{ opdracht9a | json }}
-  </p>
-  <p>
-    Opdracht 9b:
-    {{ opdracht9b | json }}
-  </p>
-  <p>
-    Opdracht 9c:
-    {{ opdracht9c | json }}
-  </p>
-  <p>
-    Opdracht 9d:
-    {{ opdracht9d | json }}
-  </p>
-  <p>
-    Opdracht 9e:
-    {{ opdracht9e | json }}
-  </p>  
-  <p>
-    Opdracht 9f:
-    {{ opdracht9f | json }}
-  </p>
-  <p>
-    Opdracht 9g:
-    {{ opdracht9g | json }}
-  </p>
+<!--<p>-->
+<!--Opdracht9 works!-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 9a:-->
+<!--{{ opdracht9a | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 9b:-->
+<!--{{ opdracht9b | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 9c:-->
+<!--{{ opdracht9c | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 9d:-->
+<!--{{ opdracht9d | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 9e:-->
+<!--{{ opdracht9e | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 9f:-->
+<!--{{ opdracht9f | json }}-->
+<!--</p>-->
+<!--<p>-->
+<!--Opdracht 9g:-->
+<!--{{ opdracht9g | json }}-->
+<!--</p>-->
+
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 9A
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht9a"
+      [dataSource]="opdracht9a">
+      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="merk"></dxi-column>
+      <dxi-column dataField="type"></dxi-column>
+      <dxi-column dataField="titel"></dxi-column>
+      <dxi-column dataField="prijs"></dxi-column>
+      <dxi-column dataField="prijs_per_d"></dxi-column>
+      <dxi-column dataField="spel_of_console"></dxi-column>
+      <dxi-column dataField="jaar_uitgave"></dxi-column>
+      <dxi-column dataField="uitgever"></dxi-column>
+      <dxi-column dataField="huurstatus"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 9B
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht9b"
+      [dataSource]="opdracht9b">
+      <dxi-column dataField="titel" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="uitgever"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 9C
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht9c"
+      [dataSource]="opdracht9c">
+      <dxi-column dataField="jaar" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="maand"></dxi-column>
+      <dxi-column dataField="omzet"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 9D
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht9d"
+      [dataSource]="opdracht9d">
+      <dxi-column dataField="titel" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="aantal_keer_verkocht_verhuurd"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 9E
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht9e"
+      [dataSource]="opdracht9e">
+      <dxi-column dataField="barcode" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="merk"></dxi-column>
+      <dxi-column dataField="type"></dxi-column>
+      <dxi-column dataField="startdatum"></dxi-column>
+      <dxi-column dataField="datum_gereed"></dxi-column>
+      <dxi-column dataField="reparatiestatus"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 9F
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht9f"
+      [dataSource]="opdracht9f">
+      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="status"></dxi-column>
+      <dxi-column dataField="omzet"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+<p></p>
+<div class="card">
+  <div class="card-header">
+    <i class="fa fa-align-justify"></i> Opdracht 9G
+  </div>
+  <div class="card-body">
+    <dx-data-grid
+      id="opdracht9g"
+      [dataSource]="opdracht9g">
+      <dxi-column dataField="jaar" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="aantal_artikelen"></dxi-column>
+      <dxi-column dataField="totaalbedrag"></dxi-column>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+      <dxo-sorting mode="multiple"></dxo-sorting>
+      <dxo-header-filter [visible]="true"></dxo-header-filter>
+      <dxo-paging
+        [enabled]="true">
+      </dxo-paging>
+      <dxo-pager
+        [showInfo]="true"
+        infoText="Pagina #{0}. Totaal: {1} ({2})"
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 20, 50]"
+        [showNavigationButtons]="true">
+      </dxo-pager>
+    </dx-data-grid>
+  </div>
+</div>
+
+
+
+
