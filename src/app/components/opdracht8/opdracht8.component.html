@@ -1,36 +1,16 @@
-<!--<p>-->
-<!--Opdracht8 works!-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 8a:-->
-<!--{{ opdracht8a | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 8b:-->
-<!--{{ opdracht8b | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 8c:-->
-<!--{{ opdracht8c | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 8d:-->
-<!--{{ opdracht8d | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 8e:-->
-<!--{{ opdracht8e | json }}-->
-<!--</p>-->
-
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 8A
+    <i class="fa fa-align-justify"></i>Klantenoverzicht
   </div>
   <div class="card-body">
-    <dx-data-grid
-      id="opdracht8a"
-      [dataSource]="opdracht8a">
-      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+    <dx-data-grid id="gridContainer"
+                  [dataSource]="opdracht8a"
+                  [masterDetail]="{ enabled: true, template: 'detail', autoExpandAll: false}"
+                  (onSelectionChanged)="selectionChanged($event)">
+      <!--id="opdracht8a"-->
+      <!--[dataSource]="opdracht8a">-->
+      <dxo-selection mode="single"></dxo-selection>
+      <dxi-column dataField="emailadres" sortOrder="desc" [width]="250"></dxi-column>
       <dxi-column dataField="merk_eigen_console"></dxi-column>
       <dxi-column dataField="type_eigen_console"></dxi-column>
       <dxi-column dataField="voornamen"></dxi-column>
@@ -39,7 +19,7 @@
       <dxi-column dataField="postcode"></dxi-column>
       <dxi-column dataField="woonplaats"></dxi-column>
       <dxi-column dataField="geboortedatum"></dxi-column>
-      <dxi-column dataField="geslacht"></dxi-column>
+      <dxi-column dataField="geslacht" [width]="75"></dxi-column>
       <dxi-column dataField="wachtwoord"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
       <dxo-sorting mode="multiple"></dxo-sorting>
@@ -54,124 +34,180 @@
         [allowedPageSizes]="[10, 20, 50]"
         [showNavigationButtons]="true">
       </dxo-pager>
+
+      <div *dxTemplate="let test of 'detail'">
+        <div class="master-detail-caption">Huurhistorie</div>
+        <!--{{ test.data | json }}-->
+        <!--<div>{{ opdracht8b | json}}</div>-->
+        <!--<div>{{ opdracht8c | json }}</div>-->
+        <!--<div>{{ opdracht8d | json }}</div>-->
+        <!--<div>{{ opdracht8e | json }}</div>-->
+        <!--{{ opdracht8b?.omzet_2015 }}-->
+        <dx-data-grid
+        [dataSource]="opdracht8b"
+        [showBorders]="true"
+        [columnAutoWidth]="true">
+        <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+        <dxi-column dataField="startdatum"></dxi-column>
+        <dxi-column dataField="barcode"></dxi-column>
+        <dxi-column dataField="bedrag"></dxi-column>
+        </dx-data-grid>
+        <p></p>
+
+        <div class="master-detail-caption">Koophistorie</div>
+        <dx-data-grid
+          [dataSource]="opdracht8c"
+          [showBorders]="true"
+          [columnAutoWidth]="true">
+          <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+          <dxi-column dataField="datum"></dxi-column>
+          <dxi-column dataField="barcode"></dxi-column>
+          <dxi-column dataField="bedrag"></dxi-column>
+        </dx-data-grid>
+        <p></p>
+
+        <div class="master-detail-caption">Omzet</div>
+        <dx-data-grid
+          [dataSource]="opdracht8d"
+          [showBorders]="true"
+          [columnAutoWidth]="true">
+          <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+          <dxi-column dataField="omzer_2014"></dxi-column>
+          <dxi-column dataField="omzet_2015"></dxi-column>
+          <dxi-column dataField="omzet_2016"></dxi-column>
+          <dxi-column dataField="omzet_2017"></dxi-column>
+          <dxi-column dataField="totale_omzet"></dxi-column>
+        </dx-data-grid>
+        <p></p>
+
+        <div class="master-detail-caption">Status</div>
+        <dx-data-grid
+          [dataSource]="opdracht8e"
+          [showBorders]="true"
+          [columnAutoWidth]="true">
+          <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+          <dxi-column dataField="status"></dxi-column>
+        </dx-data-grid>
+      </div>
     </dx-data-grid>
   </div>
 </div>
-<p></p>
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 8B
-  </div>
-  <div class="card-body">
-    <dx-data-grid
-      id="opdracht8b"
-      [dataSource]="opdracht8b">
-      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="startdatum"></dxi-column>
-      <dxi-column dataField="barcode"></dxi-column>
-      <dxi-column dataField="bedrag"></dxi-column>
-      <dxo-filter-row [visible]="true"></dxo-filter-row>
-      <dxo-sorting mode="multiple"></dxo-sorting>
-      <dxo-header-filter [visible]="true"></dxo-header-filter>
-      <dxo-paging
-        [enabled]="true">
-      </dxo-paging>
-      <dxo-pager
-        [showInfo]="true"
-        infoText="Pagina #{0}. Totaal: {1} ({2})"
-        [showPageSizeSelector]="true"
-        [allowedPageSizes]="[10, 20, 50]"
-        [showNavigationButtons]="true">
-      </dxo-pager>
-    </dx-data-grid>
-  </div>
-</div>
-<p></p>
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 8C
-  </div>
-  <div class="card-body">
-    <dx-data-grid
-      id="opdracht8c"
-      [dataSource]="opdracht8c">
-      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="datum"></dxi-column>
-      <dxi-column dataField="barcode"></dxi-column>
-      <dxi-column dataField="bedrag"></dxi-column>
-      <dxo-filter-row [visible]="true"></dxo-filter-row>
-      <dxo-sorting mode="multiple"></dxo-sorting>
-      <dxo-header-filter [visible]="true"></dxo-header-filter>
-      <dxo-paging
-        [enabled]="true">
-      </dxo-paging>
-      <dxo-pager
-        [showInfo]="true"
-        infoText="Pagina #{0}. Totaal: {1} ({2})"
-        [showPageSizeSelector]="true"
-        [allowedPageSizes]="[10, 20, 50]"
-        [showNavigationButtons]="true">
-      </dxo-pager>
-    </dx-data-grid>
-  </div>
-</div>
-<p></p>
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 8D
-  </div>
-  <div class="card-body">
-    <dx-data-grid
-      id="opdracht8d"
-      [dataSource]="opdracht8d">
-      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="omzer_2014"></dxi-column>
-      <dxi-column dataField="omzet_2015"></dxi-column>
-      <dxi-column dataField="omzet_2016"></dxi-column>
-      <dxi-column dataField="omzet_2017"></dxi-column>
-      <dxi-column dataField="totale_omzet"></dxi-column>
-      <dxo-filter-row [visible]="true"></dxo-filter-row>
-      <dxo-sorting mode="multiple"></dxo-sorting>
-      <dxo-header-filter [visible]="true"></dxo-header-filter>
-      <dxo-paging
-        [enabled]="true">
-      </dxo-paging>
-      <dxo-pager
-        [showInfo]="true"
-        infoText="Pagina #{0}. Totaal: {1} ({2})"
-        [showPageSizeSelector]="true"
-        [allowedPageSizes]="[10, 20, 50]"
-        [showNavigationButtons]="true">
-      </dxo-pager>
-    </dx-data-grid>
-  </div>
-</div>
-<p></p>
-<div class="card">
-  <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 8E
-  </div>
-  <div class="card-body">
-    <dx-data-grid
-      id="opdracht8e"
-      [dataSource]="opdracht8e">
-      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="status"></dxi-column>
-      <dxo-filter-row [visible]="true"></dxo-filter-row>
-      <dxo-sorting mode="multiple"></dxo-sorting>
-      <dxo-header-filter [visible]="true"></dxo-header-filter>
-      <dxo-paging
-        [enabled]="true">
-      </dxo-paging>
-      <dxo-pager
-        [showInfo]="true"
-        infoText="Pagina #{0}. Totaal: {1} ({2})"
-        [showPageSizeSelector]="true"
-        [allowedPageSizes]="[10, 20, 50]"
-        [showNavigationButtons]="true">
-      </dxo-pager>
-    </dx-data-grid>
-  </div>
-</div>
+
+<!--<p></p>-->
+<!--<div class="card">-->
+<!--<div class="card-header">-->
+<!--<i class="fa fa-align-justify"></i> Opdracht 8B-->
+<!--</div>-->
+<!--<div class="card-body">-->
+<!--<dx-data-grid-->
+<!--id="opdracht8b"-->
+<!--[dataSource]="opdracht8b">-->
+<!--<dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>-->
+<!--<dxi-column dataField="startdatum"></dxi-column>-->
+<!--<dxi-column dataField="barcode"></dxi-column>-->
+<!--<dxi-column dataField="bedrag"></dxi-column>-->
+<!--<dxo-filter-row [visible]="true"></dxo-filter-row>-->
+<!--<dxo-sorting mode="multiple"></dxo-sorting>-->
+<!--<dxo-header-filter [visible]="true"></dxo-header-filter>-->
+<!--<dxo-paging-->
+<!--[enabled]="true">-->
+<!--</dxo-paging>-->
+<!--<dxo-pager-->
+<!--[showInfo]="true"-->
+<!--infoText="Pagina #{0}. Totaal: {1} ({2})"-->
+<!--[showPageSizeSelector]="true"-->
+<!--[allowedPageSizes]="[10, 20, 50]"-->
+<!--[showNavigationButtons]="true">-->
+<!--</dxo-pager>-->
+<!--</dx-data-grid>-->
+<!--</div>-->
+<!--</div>-->
+<!--<p></p>-->
+<!--<div class="card">-->
+<!--<div class="card-header">-->
+<!--<i class="fa fa-align-justify"></i> Opdracht 8C-->
+<!--</div>-->
+<!--<div class="card-body">-->
+<!--<dx-data-grid-->
+<!--id="opdracht8c"-->
+<!--[dataSource]="opdracht8c">-->
+<!--<dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>-->
+<!--<dxi-column dataField="datum"></dxi-column>-->
+<!--<dxi-column dataField="barcode"></dxi-column>-->
+<!--<dxi-column dataField="bedrag"></dxi-column>-->
+<!--<dxo-filter-row [visible]="true"></dxo-filter-row>-->
+<!--<dxo-sorting mode="multiple"></dxo-sorting>-->
+<!--<dxo-header-filter [visible]="true"></dxo-header-filter>-->
+<!--<dxo-paging-->
+<!--[enabled]="true">-->
+<!--</dxo-paging>-->
+<!--<dxo-pager-->
+<!--[showInfo]="true"-->
+<!--infoText="Pagina #{0}. Totaal: {1} ({2})"-->
+<!--[showPageSizeSelector]="true"-->
+<!--[allowedPageSizes]="[10, 20, 50]"-->
+<!--[showNavigationButtons]="true">-->
+<!--</dxo-pager>-->
+<!--</dx-data-grid>-->
+<!--</div>-->
+<!--</div>-->
+<!--<p></p>-->
+<!--<div class="card">-->
+<!--<div class="card-header">-->
+<!--<i class="fa fa-align-justify"></i> Opdracht 8D-->
+<!--</div>-->
+<!--<div class="card-body">-->
+<!--<dx-data-grid-->
+<!--id="opdracht8d"-->
+<!--[dataSource]="opdracht8d">-->
+<!--<dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>-->
+<!--<dxi-column dataField="omzer_2014"></dxi-column>-->
+<!--<dxi-column dataField="omzet_2015"></dxi-column>-->
+<!--<dxi-column dataField="omzet_2016"></dxi-column>-->
+<!--<dxi-column dataField="omzet_2017"></dxi-column>-->
+<!--<dxi-column dataField="totale_omzet"></dxi-column>-->
+<!--<dxo-filter-row [visible]="true"></dxo-filter-row>-->
+<!--<dxo-sorting mode="multiple"></dxo-sorting>-->
+<!--<dxo-header-filter [visible]="true"></dxo-header-filter>-->
+<!--<dxo-paging-->
+<!--[enabled]="true">-->
+<!--</dxo-paging>-->
+<!--<dxo-pager-->
+<!--[showInfo]="true"-->
+<!--infoText="Pagina #{0}. Totaal: {1} ({2})"-->
+<!--[showPageSizeSelector]="true"-->
+<!--[allowedPageSizes]="[10, 20, 50]"-->
+<!--[showNavigationButtons]="true">-->
+<!--</dxo-pager>-->
+<!--</dx-data-grid>-->
+<!--</div>-->
+<!--</div>-->
+<!--<p></p>-->
+<!--<div class="card">-->
+<!--<div class="card-header">-->
+<!--<i class="fa fa-align-justify"></i> Opdracht 8E-->
+<!--</div>-->
+<!--<div class="card-body">-->
+<!--<dx-data-grid-->
+<!--id="opdracht8e"-->
+<!--[dataSource]="opdracht8e">-->
+<!--<dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>-->
+<!--<dxi-column dataField="status"></dxi-column>-->
+<!--<dxo-filter-row [visible]="true"></dxo-filter-row>-->
+<!--<dxo-sorting mode="multiple"></dxo-sorting>-->
+<!--<dxo-header-filter [visible]="true"></dxo-header-filter>-->
+<!--<dxo-paging-->
+<!--[enabled]="true">-->
+<!--</dxo-paging>-->
+<!--<dxo-pager-->
+<!--[showInfo]="true"-->
+<!--infoText="Pagina #{0}. Totaal: {1} ({2})"-->
+<!--[showPageSizeSelector]="true"-->
+<!--[allowedPageSizes]="[10, 20, 50]"-->
+<!--[showNavigationButtons]="true">-->
+<!--</dxo-pager>-->
+<!--</dx-data-grid>-->
+<!--</div>-->
+<!--</div>-->
 
 

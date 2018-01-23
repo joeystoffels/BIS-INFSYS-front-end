@@ -20,7 +20,7 @@ const APP_CONTAINERS = [
 // Import components
 import {
   AppAsideComponent,
-  AppBreadcrumbsComponent,
+  // AppBreadcrumbsComponent,
   AppFooterComponent,
   AppHeaderComponent,
   AppSidebarComponent,
@@ -33,7 +33,7 @@ import {
 
 const APP_COMPONENTS = [
   AppAsideComponent,
-  AppBreadcrumbsComponent,
+  // AppBreadcrumbsComponent,
   AppFooterComponent,
   AppHeaderComponent,
   AppSidebarComponent,
@@ -71,6 +71,7 @@ import {Opdracht8Component} from "./components/opdracht8/opdracht8.component";
 import {Opdracht9Component} from "./components/opdracht9/opdracht9.component";
 import {HttpClientModule} from "@angular/common/http";
 import {DxDataGridModule} from "devextreme-angular";
+import {LoginComponent} from "./views/pages/login.component";
 
 @NgModule({
   imports: [
@@ -89,7 +90,8 @@ import {DxDataGridModule} from "devextreme-angular";
     ...APP_DIRECTIVES,
     Opdracht7Component,
     Opdracht8Component,
-    Opdracht9Component
+    Opdracht9Component,
+    LoginComponent
   ],
   providers: [{
     provide: LocationStrategy,

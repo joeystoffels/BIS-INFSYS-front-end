@@ -75,7 +75,7 @@ app-root {
     position: fixed;
     z-index: $zindex-sticky - 1;
     width: $sidebar-width;
-    height: calc(100vh - #{$navbar-height});
+    height: 100%;
     // margin-top: - $navbar-height;
 
     // .sidebar-nav {
@@ -345,7 +345,7 @@ app-root {
     position: fixed;
     z-index: $zindex-sticky - 1;
     width: $mobile-sidebar-width;
-    height: calc(100vh - #{$navbar-height});
+    height: 100%;
     margin-left: - $mobile-sidebar-width;
 
     .sidebar-nav,

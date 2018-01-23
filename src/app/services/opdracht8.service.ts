@@ -30,33 +30,33 @@ export class Opdracht8Service {
         });
       }
 
-  public getOpdracht8b(): Observable<any> {
+  public getOpdracht8b(email: String): Observable<any> {
     // return an observable
-    return this.http.get<opdracht_8b>(this.url + '8b')
+    return this.http.get<opdracht_8b>(this.url + '8b/' + email + '/')
         .map((data) => {
             return data;
         });
       }
 
-  public getOpdracht8c(): Observable<any> {
+  public getOpdracht8c(email: String): Observable<any> {
     // return an observable
-    return this.http.get<opdracht_8c>(this.url + '8c')
+    return this.http.get<opdracht_8c>(this.url + '8c/' + email + '/')
         .map((data) => {
             return data;
         });
       }
 
-  public getOpdracht8d(): Observable<any> {
+  public getOpdracht8d(email: String): Observable<any> {
     // return an observable
-    return this.http.get<opdracht_8d>(this.url + '8d')
+    return this.http.get<opdracht_8d>(this.url + '8d/' + email + '/')
         .map((data) => {
             return data;
         });
       }
 
-  public getOpdracht8e(): Observable<any> {
+  public getOpdracht8e(email: String): Observable<any> {
     // return an observable
-    return this.http.get<opdracht_8e>(this.url + '8e')
+    return this.http.get<opdracht_8e>(this.url + '8e/' + email + '/')
         .map((data) => {
             return data;
         });

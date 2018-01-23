@@ -13,4 +13,8 @@ export interface Klant {
     wachtwoord: String;
     omzet: Number;
     status: String;
+    barcode: String;
+    bedrag: String;
+    startdatum: String;
+
 }

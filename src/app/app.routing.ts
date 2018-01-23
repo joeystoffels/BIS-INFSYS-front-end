@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { Opdracht7Component } from './components/opdracht7/opdracht7.component';
 import { Opdracht8Component } from './components/opdracht8/opdracht8.component';
 import { Opdracht9Component } from './components/opdracht9/opdracht9.component';
+import { LoginComponent } from "./views/pages/login.component";
 
 // Import Containers
 import {
@@ -24,6 +25,9 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'login', component: LoginComponent
+      },
+      {
         path: 'opdracht7', component: Opdracht7Component
       },
       {
@@ -31,54 +35,57 @@ export const routes: Routes = [
       },
       {
         path: 'opdracht9', component: Opdracht9Component
-      },
-      {
-        path: 'base',
-        loadChildren: './views/base/base.module#BaseModule'
-      },
-      {
-        path: 'buttons',
-        loadChildren: './views/buttons/buttons.module#ButtonsModule'
-      },
-      {
-        path: 'charts',
-        loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
-      },
-      {
-        path: 'dashboard',
-        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-      },
-      {
-        path: 'icons',
-        loadChildren: './views/icons/icons.module#IconsModule'
-      },
-      {
-        path: 'notifications',
-        loadChildren: './views/notifications/notifications.module#NotificationsModule'
-      },
-      {
-        path: 'theme',
-        loadChildren: './views/theme/theme.module#ThemeModule'
-      },
-      {
-        path: 'widgets',
-        loadChildren: './views/widgets/widgets.module#WidgetsModule'
       }
+      // ,
+      // {
+      //   path: 'base',
+      //   loadChildren: './views/base/base.module#BaseModule'
+      // },
+      // {
+      //   path: 'buttons',
+      //   loadChildren: './views/buttons/buttons.module#ButtonsModule'
+      // },
+      // {
+      //   path: 'charts',
+      //   loadChildren: './views/chartjs/chartjs.module#ChartJSModule'
+      // },
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+      // },
+      // {
+      //   path: 'icons',
+      //   loadChildren: './views/icons/icons.module#IconsModule'
+      // },
+      // {
+      //   path: 'notifications',
+      //   loadChildren: './views/notifications/notifications.module#NotificationsModule'
+      // },
+      // {
+      //   path: 'theme',
+      //   loadChildren: './views/theme/theme.module#ThemeModule'
+      // },
+      // {
+      //   path: 'widgets',
+      //   loadChildren: './views/widgets/widgets.module#WidgetsModule'
+      // }
     ]
   },
-  {
-    path: 'pages',
-    component: SimpleLayoutComponent,
-    data: {
-      title: 'Pages'
-    },
-    children: [
-      {
-        path: '',
-        loadChildren: './views/pages/pages.module#PagesModule',
-      }
-    ]
-  }
+
+
+  // {
+  //   path: 'pages',
+  //   component: SimpleLayoutComponent,
+  //   data: {
+  //     title: 'Pages'
+  //   },
+  //   children: [
+  //     {
+  //       path: '',
+  //       loadChildren: './views/pages/pages.module#PagesModule',
+  //     }
+  //   ]
+  // }
 ];
 
 @NgModule({

@@ -1,38 +1,6 @@
-<!--<p>-->
-<!--Opdracht9 works!-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 9a:-->
-<!--{{ opdracht9a | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 9b:-->
-<!--{{ opdracht9b | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 9c:-->
-<!--{{ opdracht9c | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 9d:-->
-<!--{{ opdracht9d | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 9e:-->
-<!--{{ opdracht9e | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 9f:-->
-<!--{{ opdracht9f | json }}-->
-<!--</p>-->
-<!--<p>-->
-<!--Opdracht 9g:-->
-<!--{{ opdracht9g | json }}-->
-<!--</p>-->
-
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 9A
+    <i class="fa fa-align-justify"></i>Verhuurde artikelen
   </div>
   <div class="card-body">
     <dx-data-grid
@@ -42,10 +10,10 @@
       <dxi-column dataField="merk"></dxi-column>
       <dxi-column dataField="type"></dxi-column>
       <dxi-column dataField="titel"></dxi-column>
-      <dxi-column dataField="prijs"></dxi-column>
-      <dxi-column dataField="prijs_per_d"></dxi-column>
+      <dxi-column dataField="prijs" dataType="number"></dxi-column>
+      <dxi-column dataField="prijs_per_d" dataType="number"></dxi-column>
       <dxi-column dataField="spel_of_console"></dxi-column>
-      <dxi-column dataField="jaar_uitgave"></dxi-column>
+      <dxi-column dataField="jaar_uitgave" dataType="number"></dxi-column>
       <dxi-column dataField="uitgever"></dxi-column>
       <dxi-column dataField="huurstatus"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
@@ -67,7 +35,7 @@
 <p></p>
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 9B
+    <i class="fa fa-align-justify"></i>Niet verhuurde spellen 2016
   </div>
   <div class="card-body">
     <dx-data-grid
@@ -94,15 +62,15 @@
 <p></p>
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 9C
+    <i class="fa fa-align-justify"></i>Maandomzetten 2012 tot 2017
   </div>
   <div class="card-body">
     <dx-data-grid
       id="opdracht9c"
       [dataSource]="opdracht9c">
-      <dxi-column dataField="jaar" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="maand"></dxi-column>
-      <dxi-column dataField="omzet"></dxi-column>
+      <dxi-column dataField="jaar" dataType="number" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="maand" dataType="number"></dxi-column>
+      <dxi-column dataField="omzet" dataType="number"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
       <dxo-sorting mode="multiple"></dxo-sorting>
       <dxo-header-filter [visible]="true"></dxo-header-filter>
@@ -122,14 +90,14 @@
 <p></p>
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 9D
+    <i class="fa fa-align-justify"></i>Populairste spellen
   </div>
   <div class="card-body">
     <dx-data-grid
       id="opdracht9d"
       [dataSource]="opdracht9d">
-      <dxi-column dataField="titel" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="aantal_keer_verkocht_verhuurd"></dxi-column>
+      <dxi-column dataField="titel"></dxi-column>
+      <dxi-column dataField="aantal_keer_verkocht_verhuurd" dataType="number" sortOrder="desc"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
       <dxo-sorting mode="multiple"></dxo-sorting>
       <dxo-header-filter [visible]="true"></dxo-header-filter>
@@ -149,15 +117,15 @@
 <p></p>
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 9E
+    <i class="fa fa-align-justify"></i>Consoles in reparatie
   </div>
   <div class="card-body">
     <dx-data-grid
       id="opdracht9e"
       [dataSource]="opdracht9e">
-      <dxi-column dataField="barcode" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="merk"></dxi-column>
-      <dxi-column dataField="type"></dxi-column>
+      <dxi-column dataField="barcode" dataType="number" [width]="100" sortOrder="asc"></dxi-column>
+      <dxi-column dataField="merk" [width]="100"></dxi-column>
+      <dxi-column dataField="type" [width]="100"></dxi-column>
       <dxi-column dataField="startdatum"></dxi-column>
       <dxi-column dataField="datum_gereed"></dxi-column>
       <dxi-column dataField="reparatiestatus"></dxi-column>
@@ -180,15 +148,15 @@
 <p></p>
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 9F
+    <i class="fa fa-align-justify"></i>Omzetten klanten
   </div>
   <div class="card-body">
     <dx-data-grid
       id="opdracht9f"
       [dataSource]="opdracht9f">
-      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="emailadres"></dxi-column>
       <dxi-column dataField="status"></dxi-column>
-      <dxi-column dataField="omzet"></dxi-column>
+      <dxi-column dataField="omzet" dataType="number" sortOrder="desc"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
       <dxo-sorting mode="multiple"></dxo-sorting>
       <dxo-header-filter [visible]="true"></dxo-header-filter>
@@ -208,15 +176,15 @@
 <p></p>
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-align-justify"></i> Opdracht 9G
+    <i class="fa fa-align-justify"></i>Inkoophoeveelheid en totaalbedrag
   </div>
   <div class="card-body">
     <dx-data-grid
       id="opdracht9g"
       [dataSource]="opdracht9g">
-      <dxi-column dataField="jaar" sortOrder="desc"></dxi-column>
-      <dxi-column dataField="aantal_artikelen"></dxi-column>
-      <dxi-column dataField="totaalbedrag"></dxi-column>
+      <dxi-column dataField="jaar" dataType="number" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="aantal_artikelen" dataType="number"></dxi-column>
+      <dxi-column dataField="totaalbedrag" dataType="number"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
       <dxo-sorting mode="multiple"></dxo-sorting>
       <dxo-header-filter [visible]="true"></dxo-header-filter>

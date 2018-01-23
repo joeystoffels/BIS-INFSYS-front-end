@@ -8,6 +8,7 @@ import { navigation } from './../../_nav';
   template: `
     <nav class="sidebar-nav">
       <ul class="nav">
+        <img src="assets/img/logo.jpeg" width="200px"/>
         <ng-template ngFor let-navitem [ngForOf]="navigation">
           <li *ngIf="isDivider(navitem)" class="nav-divider"></li>
           <ng-template [ngIf]="isTitle(navitem)">
@@ -17,6 +18,15 @@ import { navigation } from './../../_nav';
             <app-sidebar-nav-item [item]='navitem'></app-sidebar-nav-item>
           </ng-template>
         </ng-template>
+        <li class="nav-item dropdown" dropdown placement="bottom right">
+          <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
+            <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+          </a>
+          <div class="dropdown-menu dropdown-menu-left" *dropdownMenu aria-labelledby="simple-dropdown">
+            <div class="dropdown-header text-center"><strong>Account</strong></div>
+            <a class="dropdown-item" href="#/login"><i class="fa fa-lock"></i>Logout</a>
+          </div>
+        </li>
       </ul>
     </nav>`
 })
