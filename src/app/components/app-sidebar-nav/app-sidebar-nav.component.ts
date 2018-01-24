@@ -10,6 +10,7 @@ import {AuthService} from "../../services/auth.service";
     <nav class="sidebar-nav">
       <ul class="nav">
         <img src="assets/img/logo.jpeg" width="200px"/>
+        <p></p>
         <ng-template ngFor let-navitem [ngForOf]="navigation">
           <li *ngIf="isDivider(navitem)" class="nav-divider"></li>
           <ng-template [ngIf]="isTitle(navitem)">
@@ -19,9 +20,10 @@ import {AuthService} from "../../services/auth.service";
             <app-sidebar-nav-item [item]='navitem'></app-sidebar-nav-item>
           </ng-template>
         </ng-template>
+        <p></p>
         <li class="nav-item dropdown" dropdown placement="bottom right">
           <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
-            <img src="assets/img/avatars/0.png" width="50px" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+            <img src="assets/img/avatars/0.png" width="50px" class="img-avatar"/>
             <p><b>{{ auth.getUsername() }}</b></p>
           </a>
           <div class="dropdown-menu dropdown-menu-left" *dropdownMenu aria-labelledby="simple-dropdown">
@@ -32,7 +34,7 @@ import {AuthService} from "../../services/auth.service";
             <a (click)="login('VOORRAADBEHEERDER')" class="dropdown-item" href="#/opdracht7">Voorraadbeheerder</a>
             <a (click)="login('REPARATEUR')" class="dropdown-item" href="#/opdracht7">Reparateur</a>
             <a (click)="login('ADMIN')" class="dropdown-item" href="#/opdracht7">Admin</a>    
-            <a class="dropdown-item" href="#/opdracht7" (click)="auth.logOut()" ><i class="fa fa-lock"></i>Logout</a>
+            <a class="dropdown-item" href="#/opdracht7" (click)="auth.logOut()">Logout</a>
           </div>
         </li>
       </ul>
@@ -55,45 +57,33 @@ export class AppSidebarNavComponent {
   public login(name: String){
     switch (name){
       case 'MEDEWERKER': {
-        this.auth.setName('M. De Geus');
         this.auth.setUsername('Medewerker');
         this.auth.setPassword('medewerker');
-        this.auth.setRole('medewerker');
         break;
       }
       case 'FILIAALMANAGER': {
-        this.auth.setName('J. Stoffels');
         this.auth.setUsername('Filiaalmanager');
         this.auth.setPassword('filiaalmanager');
-        this.auth.setRole('filiaalmanager');
         break;
       }
       case 'DIRECTIE': {
-        this.auth.setName('N. Hartjes');
         this.auth.setUsername('Directie');
         this.auth.setPassword('directie');
-        this.auth.setRole('directie');
         break;
       }
       case 'VOORRAADBEHEERDER': {
-        this.auth.setName('J. Order');
         this.auth.setUsername('Voorraadbeheerder');
         this.auth.setPassword('voorraadbeheerder');
-        this.auth.setRole('voorraadbeheerder');
         break;
       }
       case 'REPARATEUR': {
-        this.auth.setName('F. Ixnix');
         this.auth.setUsername('Reparateur');
         this.auth.setPassword('reparateur');
-        this.auth.setRole('reparateur');
         break;
       }
       case 'ADMIN': {
-        this.auth.setName('P. Cornelissen');
         this.auth.setUsername('Admin');
         this.auth.setPassword('admin');
-        this.auth.setRole('admin');
         break;
       }
     }
