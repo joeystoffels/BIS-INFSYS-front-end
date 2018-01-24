@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 
 // Import navigation elements
 import { navigation } from './../../_nav';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-sidebar-nav',
@@ -20,11 +21,18 @@ import { navigation } from './../../_nav';
         </ng-template>
         <li class="nav-item dropdown" dropdown placement="bottom right">
           <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
-            <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+            <img src="assets/img/avatars/0.png" width="50px" class="img-avatar" alt="admin@bootstrapmaster.com"/>
+            <p><b>{{ auth.getUsername() }}</b></p>
           </a>
           <div class="dropdown-menu dropdown-menu-left" *dropdownMenu aria-labelledby="simple-dropdown">
             <div class="dropdown-header text-center"><strong>Account</strong></div>
-            <a class="dropdown-item" href="#/login"><i class="fa fa-lock"></i>Logout</a>
+            <a (click)="login('MEDEWERKER')" class="dropdown-item" href="#/opdracht7">Medewerker</a>
+            <a (click)="login('FILIAALMANAGER')" class="dropdown-item" href="#/opdracht7">Filiaalmanager</a>
+            <a (click)="login('DIRECTIE')" class="dropdown-item" href="#/opdracht7">Directie</a>
+            <a (click)="login('VOORRAADBEHEERDER')" class="dropdown-item" href="#/opdracht7">Voorraadbeheerder</a>
+            <a (click)="login('REPARATEUR')" class="dropdown-item" href="#/opdracht7">Reparateur</a>
+            <a (click)="login('ADMIN')" class="dropdown-item" href="#/opdracht7">Admin</a>    
+            <a class="dropdown-item" href="#/opdracht7" (click)="auth.logOut()" ><i class="fa fa-lock"></i>Logout</a>
           </div>
         </li>
       </ul>
@@ -41,9 +49,59 @@ export class AppSidebarNavComponent {
   public isTitle(item) {
     return item.title ? true : false
   }
+  public username: String = '';
+  public password: String = '';
 
-  constructor() { }
+  public login(name: String){
+    switch (name){
+      case 'MEDEWERKER': {
+        this.auth.setName('M. De Geus');
+        this.auth.setUsername('Medewerker');
+        this.auth.setPassword('medewerker');
+        this.auth.setRole('medewerker');
+        break;
+      }
+      case 'FILIAALMANAGER': {
+        this.auth.setName('J. Stoffels');
+        this.auth.setUsername('Filiaalmanager');
+        this.auth.setPassword('filiaalmanager');
+        this.auth.setRole('filiaalmanager');
+        break;
+      }
+      case 'DIRECTIE': {
+        this.auth.setName('N. Hartjes');
+        this.auth.setUsername('Directie');
+        this.auth.setPassword('directie');
+        this.auth.setRole('directie');
+        break;
+      }
+      case 'VOORRAADBEHEERDER': {
+        this.auth.setName('J. Order');
+        this.auth.setUsername('Voorraadbeheerder');
+        this.auth.setPassword('voorraadbeheerder');
+        this.auth.setRole('voorraadbeheerder');
+        break;
+      }
+      case 'REPARATEUR': {
+        this.auth.setName('F. Ixnix');
+        this.auth.setUsername('Reparateur');
+        this.auth.setPassword('reparateur');
+        this.auth.setRole('reparateur');
+        break;
+      }
+      case 'ADMIN': {
+        this.auth.setName('P. Cornelissen');
+        this.auth.setUsername('Admin');
+        this.auth.setPassword('admin');
+        this.auth.setRole('admin');
+        break;
+      }
+    }
+  }
+  constructor(private auth: AuthService) { }
 }
+
+
 
 import { Router } from '@angular/router';
 

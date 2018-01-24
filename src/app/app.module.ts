@@ -72,6 +72,7 @@ import {Opdracht9Component} from "./components/opdracht9/opdracht9.component";
 import {HttpClientModule} from "@angular/common/http";
 import {DxDataGridModule} from "devextreme-angular";
 import {LoginComponent} from "./views/pages/login.component";
+import {AuthService} from "./services/auth.service";
 
 @NgModule({
   imports: [
@@ -99,7 +100,8 @@ import {LoginComponent} from "./views/pages/login.component";
   },
     Opdracht7Service,
     Opdracht8Service,
-    Opdracht9Service],
+    Opdracht9Service,
+    AuthService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

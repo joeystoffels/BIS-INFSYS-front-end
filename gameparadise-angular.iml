@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/old" />
       <excludeFolder url="file://$MODULE_DIR$/old/dist" />
       <excludeFolder url="file://$MODULE_DIR$/old/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/app/components/login" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
