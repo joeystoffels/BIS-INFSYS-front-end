@@ -6,11 +6,8 @@ export class AuthService {
 
   constructor(private router: Router) { this._username = 'Log in'}
 
-  public _name: String;
   private _username: String;
   private _password: String;
-  private _role: String;
-
 
   public getUsername(): String {
     return this._username;
@@ -28,25 +25,8 @@ export class AuthService {
     this._password = value;
   }
 
-  public getRole(): String {
-    return this._role;
-  }
-
-  public setRole(value: String) {
-    this._role = value;
-  }
-
-  public getName(): String {
-    return this._name;
-  }
-
-  public setName(value: String) {
-    this._name = value;
-  }
-
   public logOut(){
     this.setUsername('Log in');
     this.setPassword('');
-    this.setRole('');
   }
 }

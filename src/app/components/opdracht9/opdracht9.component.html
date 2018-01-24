@@ -1,8 +1,8 @@
-<div class="card">
+<div *ngIf="this.opdracht9aauth.includes(this.authService.getUsername().toString())"  class="card">
   <div class="card-header">
     <i class="fa fa-align-justify"></i>Verhuurde artikelen
   </div>
-  <div *ngIf="this.opdracht9aauth.includes(this.authService.getUsername().toString())" class="card-body">
+  <div class="card-body">
     <dx-data-grid
       id="opdracht9a"
       [dataSource]="opdracht9a">
@@ -33,11 +33,11 @@
   </div>
 </div>
 <p></p>
-<div class="card">
+<div *ngIf="this.opdracht9bauth.includes(this.authService.getUsername().toString())" class="card">
   <div class="card-header">
     <i class="fa fa-align-justify"></i>Niet verhuurde spellen 2016
   </div>
-  <div *ngIf="this.opdracht9bauth.includes(this.authService.getUsername().toString())" class="card-body">
+  <div class="card-body">
     <dx-data-grid
       id="opdracht9b"
       [dataSource]="opdracht9b">
@@ -60,11 +60,11 @@
   </div>
 </div>
 <p></p>
-<div class="card">
+<div *ngIf="this.opdracht9cauth.includes(this.authService.getUsername().toString())" class="card">
   <div class="card-header">
     <i class="fa fa-align-justify"></i>Maandomzetten 2012 tot 2017
   </div>
-  <div *ngIf="this.opdracht9cauth.includes(this.authService.getUsername().toString())" class="card-body">
+  <div class="card-body">
     <dx-data-grid
       id="opdracht9c"
       [dataSource]="opdracht9c">
@@ -88,11 +88,11 @@
   </div>
 </div>
 <p></p>
-<div class="card">
+<div *ngIf="this.opdracht9dauth.includes(this.authService.getUsername().toString())" class="card">
   <div class="card-header">
     <i class="fa fa-align-justify"></i>Populairste spellen
   </div>
-  <div *ngIf="this.opdracht9dauth.includes(this.authService.getUsername().toString())" class="card-body">
+  <div class="card-body">
     <dx-data-grid
       id="opdracht9d"
       [dataSource]="opdracht9d">
@@ -115,11 +115,11 @@
   </div>
 </div>
 <p></p>
-<div class="card">
+<div *ngIf="this.opdracht9eauth.includes(this.authService.getUsername().toString())" class="card">
   <div class="card-header">
     <i class="fa fa-align-justify"></i>Consoles in reparatie
   </div>
-  <div *ngIf="this.opdracht9eauth.includes(this.authService.getUsername().toString())" class="card-body">
+  <div class="card-body">
     <dx-data-grid
       id="opdracht9e"
       [dataSource]="opdracht9e">
@@ -146,11 +146,11 @@
   </div>
 </div>
 <p></p>
-<div class="card">
+<div *ngIf="this.opdracht9fauth.includes(this.authService.getUsername().toString())" class="card">
   <div class="card-header">
     <i class="fa fa-align-justify"></i>Omzetten klanten
   </div>
-  <div *ngIf="this.opdracht9fauth.includes(this.authService.getUsername().toString())" class="card-body">
+  <div class="card-body">
     <dx-data-grid
       id="opdracht9f"
       [dataSource]="opdracht9f">
@@ -174,11 +174,11 @@
   </div>
 </div>
 <p></p>
-<div class="card">
+<div *ngIf="this.opdracht9gauth.includes(this.authService.getUsername().toString())" class="card">
   <div class="card-header">
     <i class="fa fa-align-justify"></i>Inkoophoeveelheid en totaalbedrag
   </div>
-  <div *ngIf="this.opdracht9gauth.includes(this.authService.getUsername().toString())" class="card-body">
+  <div class="card-body">
     <dx-data-grid
       id="opdracht9g"
       [dataSource]="opdracht9g">
