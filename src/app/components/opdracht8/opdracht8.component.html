@@ -10,17 +10,18 @@
       <!--id="opdracht8a"-->
       <!--[dataSource]="opdracht8a">-->
       <dxo-selection mode="single"></dxo-selection>
-      <dxi-column dataField="emailadres" sortOrder="desc" [width]="250"></dxi-column>
+      <dxi-column dataField="emailadres" sortOrder="asc" [width]="250"></dxi-column>
       <dxi-column dataField="merk_eigen_console"></dxi-column>
       <dxi-column dataField="type_eigen_console"></dxi-column>
       <dxi-column dataField="voornamen"></dxi-column>
+      <dxi-column dataField="achternaam"></dxi-column>
       <dxi-column dataField="straatnaam"></dxi-column>
       <dxi-column dataField="huisnummer"></dxi-column>
       <dxi-column dataField="postcode"></dxi-column>
       <dxi-column dataField="woonplaats"></dxi-column>
       <dxi-column dataField="geboortedatum"></dxi-column>
       <dxi-column dataField="geslacht" [width]="75"></dxi-column>
-      <dxi-column dataField="wachtwoord"></dxi-column>
+      <!--<dxi-column dataField="wachtwoord"></dxi-column>-->
       <dxo-filter-row [visible]="true"></dxo-filter-row>
       <dxo-sorting mode="multiple"></dxo-sorting>
       <dxo-header-filter [visible]="true"></dxo-header-filter>
@@ -47,7 +48,7 @@
         [dataSource]="opdracht8b"
         [showBorders]="true"
         [columnAutoWidth]="true">
-        <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+        <dxi-column dataField="emailadres" sortOrder="asc"></dxi-column>
         <dxi-column dataField="startdatum"></dxi-column>
         <dxi-column dataField="barcode" dataType="number"></dxi-column>
         <dxi-column dataField="bedrag" dataType="number"></dxi-column>
@@ -59,7 +60,7 @@
           [dataSource]="opdracht8c"
           [showBorders]="true"
           [columnAutoWidth]="true">
-          <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+          <dxi-column dataField="emailadres" sortOrder="asc"></dxi-column>
           <dxi-column dataField="datum"></dxi-column>
           <dxi-column dataField="barcode" dataType="number"></dxi-column>
           <dxi-column dataField="bedrag" dataType="number"></dxi-column>
@@ -71,7 +72,7 @@
           [dataSource]="opdracht8d"
           [showBorders]="true"
           [columnAutoWidth]="true">
-          <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+          <dxi-column dataField="emailadres" sortOrder="asc"></dxi-column>
           <dxi-column dataField="omzet_2014" dataType="number"></dxi-column>
           <dxi-column dataField="omzet_2015" dataType="number"></dxi-column>
           <dxi-column dataField="omzet_2016" dataType="number"></dxi-column>
@@ -85,7 +86,7 @@
           [dataSource]="opdracht8e"
           [showBorders]="true"
           [columnAutoWidth]="true">
-          <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+          <dxi-column dataField="emailadres" sortOrder="asc"></dxi-column>
           <dxi-column dataField="status"></dxi-column>
         </dx-data-grid>
       </div>

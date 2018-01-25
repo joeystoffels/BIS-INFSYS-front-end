@@ -28,5 +28,6 @@ export class AuthService {
   public logOut(){
     this.setUsername('Log in');
     this.setPassword('');
+    this.router.navigate(['/opdracht8']);
   }
 }

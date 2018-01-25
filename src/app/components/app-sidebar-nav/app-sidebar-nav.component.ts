@@ -28,13 +28,13 @@ import {AuthService} from "../../services/auth.service";
           </a>
           <div class="dropdown-menu dropdown-menu-left" *dropdownMenu aria-labelledby="simple-dropdown">
             <div class="dropdown-header text-center"><strong>Account</strong></div>
-            <a (click)="login('MEDEWERKER')" class="dropdown-item" href="#/opdracht7">Medewerker</a>
-            <a (click)="login('FILIAALMANAGER')" class="dropdown-item" href="#/opdracht7">Filiaalmanager</a>
-            <a (click)="login('DIRECTIE')" class="dropdown-item" href="#/opdracht7">Directie</a>
-            <a (click)="login('VOORRAADBEHEERDER')" class="dropdown-item" href="#/opdracht7">Voorraadbeheerder</a>
-            <a (click)="login('REPARATEUR')" class="dropdown-item" href="#/opdracht7">Reparateur</a>
-            <a (click)="login('ADMIN')" class="dropdown-item" href="#/opdracht7">Admin</a>    
-            <a class="dropdown-item" href="#/opdracht7" (click)="auth.logOut()">Logout</a>
+            <a (click)="login('MEDEWERKER')" class="dropdown-item" href="#/opdracht8">Medewerker</a>
+            <a (click)="login('FILIAALMANAGER')" class="dropdown-item" href="#/opdracht8">Filiaalmanager</a>
+            <a (click)="login('DIRECTIE')" class="dropdown-item" href="#/opdracht8">Directie</a>
+            <a (click)="login('VOORRAADBEHEERDER')" class="dropdown-item" href="#/opdracht8">Voorraadbeheerder</a>
+            <a (click)="login('REPARATEUR')" class="dropdown-item" href="#/opdracht8">Reparateur</a>
+            <a (click)="login('ADMIN')" class="dropdown-item" href="#/opdracht8">Admin</a>    
+            <a class="dropdown-item" (click)="auth.logOut()">Logout</a>
           </div>
         </li>
       </ul>

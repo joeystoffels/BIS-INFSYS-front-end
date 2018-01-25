@@ -6,7 +6,7 @@
     <dx-data-grid
       id="opdracht9a"
       [dataSource]="opdracht9a">
-      <dxi-column dataField="emailadres" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="emailadres" sortOrder="asc"></dxi-column>
       <dxi-column dataField="merk"></dxi-column>
       <dxi-column dataField="type"></dxi-column>
       <dxi-column dataField="titel"></dxi-column>
@@ -41,7 +41,7 @@
     <dx-data-grid
       id="opdracht9b"
       [dataSource]="opdracht9b">
-      <dxi-column dataField="titel" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="titel" sortOrder="asc"></dxi-column>
       <dxi-column dataField="uitgever"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
       <dxo-sorting mode="multiple"></dxo-sorting>
@@ -68,7 +68,7 @@
     <dx-data-grid
       id="opdracht9c"
       [dataSource]="opdracht9c">
-      <dxi-column dataField="jaar" dataType="number" sortOrder="desc"></dxi-column>
+      <dxi-column dataField="jaar" dataType="number" sortOrder="asc"></dxi-column>
       <dxi-column dataField="maand" dataType="number"></dxi-column>
       <dxi-column dataField="omzet" dataType="number"></dxi-column>
       <dxo-filter-row [visible]="true"></dxo-filter-row>
